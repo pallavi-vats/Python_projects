@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Split Calculator</title>
+    <style>
+        body{
+            font-family: Arial;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+        }
+        .box{
+            background: white;
+            padding: 25px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button{
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            margin-top: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background: #0056b3;
+        }
+        .result{
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            background: #e8f0fe;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Expense Split Calculator</h2>
+
+        <form method="POST">
+            <input type="number" name="rent" placeholder="Enter Rent Amount" required>
+            <input type="number" name="food" placeholder="Enter Food Amount" required>
+            <input type="number" name="bijli" placeholder="Enter Bijli Bill Amount" required>
+            <input type="number" name="persons" placeholder="Enter Number of Persons" required>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result is not none %}
+        <div class="result">
+            Amount per person: ₹ {{ result }}
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

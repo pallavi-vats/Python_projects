@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game of Paper, Rock, and Scissor</title>
+    <style>
+        .result-box  {
+            margin-top: 20px;
+            padding: 20px;
+            background:rgb(241, 240, 238);
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            font-family: Arial;
+            cursor: pointer;
+        }
+    
+        .result-box h1  {
+            color: #0077cc;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Paper, Rock, and Scissor</h1>
+
+    <form action="/" method="POST">
+        <input type="radio" name="choice" value="paper" required> Paper <br>
+        <input type="radio" name="choice" value="rock"> Rock <br>
+        <input type="radio" name="choice" value="scissor"> Scissor <br><br>
+
+        <button type="submit">Play</button>
+    </form>
+
+    {% if result %}
+    <div class="result-box">
+        <h2>Your Choice: {{ user }}</h2>
+        <h2>Computer Choice: {{ computer }}</h2>
+        <h1>{{ result }}</h1>
+    </div>
+    {% endif %}
+</body>
+</html>
